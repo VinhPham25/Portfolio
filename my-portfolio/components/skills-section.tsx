@@ -110,8 +110,8 @@ export function SkillsSection() {
             <span className="bg-gradient-to-r from-cyan-400 to-white bg-clip-text text-transparent">Proficiency</span>
           </h2>
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-            A comprehensive overview of my technical skills and proficiency levels, continuously refined through
-            hands-on projects and continuous learning.
+            An overview of my technical skills and proficiency levels, developed and refined through
+            hands-on projects, professional experience, and curiosity.
           </p>
         </motion.div>
 

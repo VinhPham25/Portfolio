@@ -22,7 +22,8 @@ const education = {
     "Computer Organization and Programming",
     "Linear Algebra",
     "Discrete Math",
-    "Object Oriented Programming"
+    "Object Oriented Programming",
+    "Objects and Design"
   ],
 }
 

@@ -58,7 +58,7 @@ export function AboutSection() {
           {/* Photo Section */}
           <motion.div variants={itemVariants}>
             <GlassCard hover className="p-2 max-w-md mx-auto">
-              <div className="aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-cyan-500/20 to-blue-900/20 relative">
+              <div className="aspect-[3/4] rounded-xl overflow-hidden bg-gradient-to-br from-cyan-500/20 to-blue-900/20 relative">
                 <img
                   src="/professional-headshot.jpg"
                   alt="Professional headshot"
@@ -72,14 +72,17 @@ export function AboutSection() {
           {/* Bio Section */}
           <motion.div variants={itemVariants} className="space-y-6">
             <p className="text-lg text-gray-300 leading-relaxed">
-              I&apos;m a Computer Science student with a deep passion for artificial intelligence and machine learning.
-              My journey in tech began with curiosity about how things work, and has evolved into a mission to build
-              software that makes a meaningful impact.
+              I&apos;m a Computer Science student at Georgia Tech, driven by a deep passion for developing cutting-edge AI and Machine Learning technologies for social good. 
+              I firmly believe in the potential of AI, from engineering life-saving medical devices to automating essential business solutions, to create genuinely life-changing technology.
             </p>
             <p className="text-lg text-gray-300 leading-relaxed">
-              When I&apos;m not coding, you&apos;ll find me exploring the latest research papers, contributing to
-              open-source projects, or mentoring fellow students. I believe in the power of technology to solve
-              real-world problems and am constantly seeking new challenges that push my boundaries.
+              My journey is defined by a relentless curiosity and work ethic. 
+              I actively seek out challenges that push my technical boundaries, embracing the unknown as a catalyst for continuous growth.
+              Outside of my work, I enjoy playing chess, watching football, and cooking.
+              I look forward to connecting to build innovative solutions that drive meaningful change, together.
+            </p>
+            <p className="text-lg text-gray-300 leading-relaxed mt-4">
+              <i>"What a privilege to be tired from the work you once begged the universe for."</i>
             </p>
 
             {/* Quick Info Cards - updated to cyan theme with enhanced hover */}

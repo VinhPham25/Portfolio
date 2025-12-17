@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useInView, AnimatePresence } from "framer-motion"
+import { motion, useInView, AnimatePresence, Variants} from "framer-motion"
 import { useRef, useState } from "react"
 import { GlassCard } from "@/components/glass-card"
 import { SectionWrapper } from "@/components/section-wrapper"
@@ -10,38 +10,46 @@ import { Building2, Calendar, ChevronRight } from "lucide-react"
 const experiences = [
   {
     role: "Software Engineering Intern",
-    company: "Tech Company Inc.",
-    period: "Jun 2024 - Present",
+    company: "Dell Technologies",
+    period: "February 2025 - May 2025",
     description: [
-      "Developed and deployed ML models improving prediction accuracy by 25%",
-      "Built RESTful APIs serving 10M+ daily requests with 99.9% uptime",
-      "Led a team of 3 interns in redesigning the data pipeline architecture",
-      "Implemented automated testing reducing bug rate by 40%",
+      "Engineered an LLM-powered robot that converts speech into Mermaid diagrams, facilitating subject visualization and discussion",
+      "Developed LLM prompts to automate diagram generation and ensure consistent G-code syntax for precise, reliable motor control",
+      "Optimized dual-LLM processing with RAG, reducing runtime by 80% to enable real-time demonstrations for Dell executives",
     ],
-    tech: ["Python", "AWS", "Docker", "PostgreSQL"],
+    tech: ["Python", "RAG", "LLM APIs", "Prompt Engineering", "Git"],
   },
   {
     role: "Research Assistant",
-    company: "University AI Lab",
-    period: "Sep 2023 - May 2024",
+    company: "Applied Research Laboratories - University of Texas at Austin",
+    period: "June 2025 - August 2025",
     description: [
-      "Published research on transformer architectures in top-tier conference",
-      "Developed novel attention mechanisms improving model efficiency by 30%",
-      "Maintained lab's GPU cluster serving 50+ researchers",
+      "Designed an experimental study to evaluate dynamic variability in 180+ additively manufactured beams under Dr. Christina Naify",
+      "Hypertuned laser Doppler vibrometer using MATLAB to achieve 95%+ testing precision, a 30% improvement over prior methods",
+      "Enhanced curve-fitting optimization runtime by 50%, accelerating statistical analysis to drive research conclusions and publication",
     ],
-    tech: ["PyTorch", "CUDA", "Linux", "HPC"],
+    tech: ["Python", "SciPy", "Matplotlib", "Pands", "MATLAB", "CAD", "COMSOL Multiphysics"],
   },
   {
-    role: "Full Stack Developer",
-    company: "Startup XYZ",
-    period: "Jan 2023 - Aug 2023",
+    role: "AI Consultant",
+    company: "GameRun AI",
+    period: "December 2024 - February 2025",
     description: [
-      "Built full-stack web application from scratch, reaching 5,000+ users",
-      "Implemented real-time features using WebSocket technology",
-      "Reduced page load time by 60% through performance optimization",
+      "Directed UI/UX enhancements by researching 20+ AI video analysis companies to create customer-centric data visualizations",
+      "Refined LLM with AI agents to reduce hallucinations and improve automated coaching feedback for sports motion analysis",
     ],
-    tech: ["React", "Node.js", "MongoDB", "Redis"],
+    tech: ["AI Agents", "LLM", "UI/UX Design", "Competitor Analysis"],
   },
+  {
+    role: "Product Development Team Lead",
+    company: "SportzMate",
+    period: "May 2024 - August 2024",
+    description: [
+      "Led a team of 6 interns on integrating AI capabilities into the company’s new “Player Performance Tracking” in-app product",
+      "Supervised Figma prototyping and redesign of 50+ screens, improving UI/UX for feature validation and initial consumer testing",
+    ],
+    tech: ["Figma", "UI/UX Design", "Product Development"]
+  }
 ]
 
 export function ExperienceSection() {
@@ -49,7 +57,7 @@ export function ExperienceSection() {
   const isInView = useInView(ref, { once: true, amount: 0.2, margin: "-50px" })
   const [selectedExperience, setSelectedExperience] = useState<(typeof experiences)[0] | null>(null)
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -60,7 +68,7 @@ export function ExperienceSection() {
     },
   }
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, x: -50 },
     visible: {
       opacity: 1,
