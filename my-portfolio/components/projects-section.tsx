@@ -11,14 +11,18 @@ import { ExternalLink, Github, ArrowUpRight } from "lucide-react"
 const projects = [
   {
     id: 1,
-    title: "AI-Powered Code Assistant",
-    description: "An intelligent code completion and suggestion tool using transformer models.",
+    title: "Recruit Ready",
+    description: "A real-time interview practice software with AI agent-powered feedback on body language and speech.",
     longDescription:
-      "A sophisticated AI-powered development tool that leverages large language models to provide context-aware code suggestions, automated documentation generation, and intelligent refactoring recommendations. Built with a focus on developer productivity and code quality.",
-    techStack: ["Python", "PyTorch", "FastAPI", "React", "TypeScript"],
-    outcome: "Increased developer productivity by 40% in beta testing with 500+ users",
+      "Recruit Ready was born from the idea that the most critical interview cues—body language, eye contact, and vocal confidence—are often the hardest to self-evaluate. To bridge this gap, I engineered a high-performance, full-stack platform that acts as a real-time digital mirror for aspiring professionals. The system's backbone is a sophisticated computer vision pipeline built with MediaPipe and OpenCV, which tracks over 33 body landmarks at 30 FPS to analyze posture and iris positioning. Simultaneously, a speech analysis engine utilizes WebRTC and OpenAI's Whisper to process audio, calculating metrics like speaking rate and clarity while detecting silences to gauge user confidence.\n\nThe true \"intelligence\" of the platform emerges through a modular AI feedback architecture powered by Google Gemini 2.0. By deploying specialized, concurrent agents for both visual and auditory data, the system processes raw streams into structured JSON feedback with less than 100ms of latency via Socket.IO. This ensures that as a user finishes a response, they receive immediate, actionable insights rather than waiting for post-session processing. The entire experience is wrapped in a modern Next.js 16 interface that coordinates multi-question sessions, culminating in a comprehensive performance summary that aggregates eye contact percentages, posture stability, and speech pacing into a single, professional scorecard.",
+    techStack: {
+      ai: ["Google Gemini 2.0", "MediaPipe", "OpenCV", "OpenAI Whisper"],
+      backend: ["Python", "FastAPI", "Socket.IO", "WebRTC VAD", "NumPy", "PyAudio"],
+      frontend: ["Next.js", "React", "TypeScript", "Tailwind CSS"]
+    },
+    outcome: "Democratizes professional coaching by providing granular, judgment-free analysis of non-verbal communication metrics that were previously only accessible through expensive private consulting.",
     image: "/project1.jpg",
-    github: "https://github.com",
+    github: "https://github.com/VinhPham25/RecruitReady",
     demo: "https://demo.com",
     screenshots: [
       "/code-editor-with-ai-suggestions-dark.jpg",
@@ -28,14 +32,18 @@ const projects = [
   },
   {
     id: 2,
-    title: "Real-time Sentiment Analyzer",
-    description: "Live social media sentiment analysis dashboard with ML predictions.",
+    title: "SmartPath AI",
+    description: "An adaptive learning platform that uses RAG and Neo4j knowledge graphs to transform static PDFs into interactive, personalized study paths.",
     longDescription:
-      "A comprehensive sentiment analysis platform that processes social media streams in real-time, providing businesses with actionable insights about brand perception and market trends. Features advanced NLP models fine-tuned for various domains.",
-    techStack: ["Python", "TensorFlow", "Kafka", "React", "D3.js"],
-    outcome: "Processing 10,000+ posts/minute with 94% accuracy",
+      "Designed to revolutionize how students interact with complex academic material, SmartPath AI transforms static PDFs into dynamic, interactive knowledge graphs. I architected a custom RAG (Retrieval-Augmented Generation) pipeline that goes beyond simple text retrieval; it classifies document contents via high-dimensional embeddings to auto-generate subject-specific nodes and relationships. This creates a visual map of a student’s curriculum, turning a linear textbook into an interconnected web of concepts that mirrors how the human brain actually retains information.\n\n At the core of the SmartPath AI experience is an adaptive intelligence system built on Neo4j. By implementing confidence tracking and temporal decay algorithms, the platform identifies which topics a student has mastered and which are fading from memory. This data feeds into a dynamic topic prioritization engine that serves personalized quizzes, ensuring that study sessions are always focused on the user's highest-need areas. To complete the ecosystem, I developed a RAG-powered chatbot that pulls direct context from the knowledge graph to provide tailored explanations, essentially offering every student a 24/7 personal tutor that understands the specific nuances of their own study materials.",
+    techStack: {
+      ai: ["OpenAI", "LangChain", "RAG Pipelines", "Neo4j"],
+      backend: ["Python", "FastAPI", "MongoDB", "Node.js", "Express.js"],
+      frontend: ["React", "TypeScript", "CSS"]
+    },
+    outcome: "Enables personalized, high-efficiency learning paths for a student body of over 20,000 (expected), utilizing spaced repetition and confidence-based adaptation to significantly reduce study time while increasing long-term retention.",
     image: "/project2.jpg",
-    github: "https://github.com",
+    github: "https://github.com/VinhPham25/Smart-Path-AI",
     demo: "https://demo.com",
     screenshots: ["/sentiment-dashboard-analytics-dark.jpg", "/social-media-monitoring-dark-interface.jpg"],
   },
@@ -44,8 +52,12 @@ const projects = [
     title: "Distributed Task Scheduler",
     description: "Scalable job scheduling system for cloud-native applications.",
     longDescription:
-      "A high-performance distributed task scheduling system designed for cloud-native environments. Features intelligent load balancing, automatic failover, and comprehensive monitoring capabilities for enterprise-grade reliability.",
-    techStack: ["Go", "Kubernetes", "Redis", "PostgreSQL", "gRPC"],
+      "A high-performance distributed task scheduling system designed for cloud-native environments. Features intelligent load balancing, automatic failover, and comprehensive monitoring capabilities for enterprise-grade reliability.\n\nBuilt with Go for maximum performance and deployed on Kubernetes for orchestration, this system handles millions of scheduled tasks daily with sub-second precision and automatic recovery from node failures.",
+    techStack: {
+      ai: [],
+      backend: ["Go", "Kubernetes", "Redis", "PostgreSQL", "gRPC", "Prometheus"],
+      frontend: ["React", "TypeScript", "Grafana"]
+    },
     outcome: "Handling 1M+ scheduled tasks daily with 99.99% uptime",
     image: "/project3.jpg",
     github: "https://github.com",
@@ -57,8 +69,12 @@ const projects = [
     title: "Neural Style Transfer App",
     description: "Mobile app for real-time artistic style transfer using neural networks.",
     longDescription:
-      "An innovative mobile application that applies artistic styles to photos and videos in real-time using optimized neural network models. Features a library of 50+ artistic styles and custom style training capabilities.",
-    techStack: ["Swift", "Core ML", "Python", "TensorFlow", "Firebase"],
+      "An innovative mobile application that applies artistic styles to photos and videos in real-time using optimized neural network models. Features a library of 50+ artistic styles and custom style training capabilities.\n\nThe app leverages Core ML for on-device inference, ensuring privacy and low latency. Users can even train custom styles by providing their own reference images, with the training process handled in the cloud using TensorFlow.",
+    techStack: {
+      ai: ["Core ML", "TensorFlow", "PyTorch", "Neural Style Transfer"],
+      backend: ["Python", "FastAPI", "Firebase", "Cloud Functions"],
+      frontend: ["Swift", "SwiftUI", "UIKit"]
+    },
     outcome: "50,000+ downloads with 4.8 star rating",
     image: "/project4.jpg",
     github: "https://github.com",
@@ -93,6 +109,11 @@ export function ProjectsSection() {
     },
   }
 
+  // Helper function to get all tech from all categories
+  const getAllTech = (techStack: { ai: string[], backend: string[], frontend: string[] }) => {
+    return [...techStack.ai, ...techStack.backend, ...techStack.frontend]
+  }
+
   return (
     <SectionWrapper id="projects" className="relative py-32 px-6">
       <div className="max-w-7xl mx-auto" ref={ref}>
@@ -108,8 +129,7 @@ export function ProjectsSection() {
             <span className="bg-gradient-to-r from-cyan-400 to-white bg-clip-text text-transparent">Projects</span>
           </h2>
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-            A showcase of my most impactful work, demonstrating expertise in AI/ML, distributed systems, and full-stack
-            development.
+            A showcase of my personal and club projects integrating AI/ML and full-stack development.
           </p>
         </motion.div>
 
@@ -156,9 +176,9 @@ export function ProjectsSection() {
                   </h3>
                   <p className="text-gray-400 text-sm line-clamp-2">{project.description}</p>
 
-                  {/* Tech Stack - updated to cyan theme */}
+                  {/* Tech Stack - show first 4 items from combined list */}
                   <div className="flex flex-wrap gap-2">
-                    {project.techStack.slice(0, 4).map((tech) => (
+                    {getAllTech(project.techStack).slice(0, 4).map((tech) => (
                       <span
                         key={tech}
                         className="px-3 py-1 text-xs font-mono bg-white/5 rounded-full text-cyan-400 border border-cyan-500/20 transition-all duration-300 hover:border-cyan-400/50 hover:bg-cyan-500/10"

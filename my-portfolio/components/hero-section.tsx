@@ -58,7 +58,7 @@ export function HeroSection() {
             transition={{ delay: 0.4 }}
             className="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 text-balance"
           >
-            Transforming complex problems into elegant solutions through innovative software engineering and machine
+            Hello, I'm Vinh Pham. I enjoy transforming complex problems into elegant solutions through innovative software engineering and machine
             learning.
           </motion.p>
 

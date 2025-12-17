@@ -9,7 +9,11 @@ interface Project {
   title: string
   description: string
   longDescription: string
-  techStack: string[]
+  techStack: {
+    ai: string[]
+    backend: string[]
+    frontend: string[]
+  }
   outcome: string
   image: string
   github: string
@@ -23,6 +27,9 @@ interface ProjectModalProps {
 }
 
 export function ProjectModal({ project, onClose }: ProjectModalProps) {
+  // Split the long description by double newlines to get paragraphs
+  const paragraphs = project.longDescription.split('\n\n')
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -55,20 +62,62 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           <div className="p-8 max-h-[50vh] overflow-y-auto custom-scrollbar">
             <h2 className="text-3xl font-bold mb-4">{project.title}</h2>
 
-            <p className="text-gray-300 leading-relaxed mb-6">{project.longDescription}</p>
+            {/* Description with paragraph spacing */}
+            <div className="space-y-4 mb-6">
+              {paragraphs.map((paragraph, index) => (
+                <p key={index} className="text-gray-300 leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
 
-            {/* Tech Stack - cyan theme */}
+            {/* Tech Stack - organized by category */}
             <div className="mb-6">
-              <h3 className="text-sm text-gray-500 uppercase tracking-widest mb-3">Tech Stack</h3>
-              <div className="flex flex-wrap gap-2">
-                {project.techStack.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-4 py-2 text-sm font-mono bg-cyan-500/10 rounded-lg text-cyan-400 border border-cyan-500/20"
-                  >
-                    {tech}
-                  </span>
-                ))}
+              <h3 className="text-sm text-gray-500 uppercase tracking-widest mb-4">Tech Stack</h3>
+              
+              {/* AI & Computer Vision */}
+              <div className="mb-4">
+                <h4 className="text-xs text-cyan-400 font-semibold mb-2">AI & Computer Vision</h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.techStack.ai.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-4 py-2 text-sm font-mono bg-cyan-500/10 rounded-lg text-cyan-400 border border-cyan-500/20"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Backend & Real-Time */}
+              <div className="mb-4">
+                <h4 className="text-xs text-cyan-400 font-semibold mb-2">Backend & Real-Time</h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.techStack.backend.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-4 py-2 text-sm font-mono bg-cyan-500/10 rounded-lg text-cyan-400 border border-cyan-500/20"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Frontend */}
+              <div>
+                <h4 className="text-xs text-cyan-400 font-semibold mb-2">Frontend</h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.techStack.frontend.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-4 py-2 text-sm font-mono bg-cyan-500/10 rounded-lg text-cyan-400 border border-cyan-500/20"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
 
