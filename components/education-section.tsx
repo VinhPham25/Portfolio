@@ -64,7 +64,7 @@ export function EducationSection() {
                     transition={{ duration: 0.2 }}
                   >
                     <Image
-                      src="/gt-logo.png"
+                      src="/Skills/gt-logo.png"
                       alt="Georgia Tech logo"
                       width={32}
                       height={32}
