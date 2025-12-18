@@ -45,10 +45,10 @@ const projects = [
       frontend: ["React", "TypeScript", "CSS"]
     },
     outcome: "Enables personalized, high-efficiency learning paths for a student body of over 20,000 (expected), utilizing spaced repetition and confidence-based adaptation to significantly reduce study time while increasing long-term retention.",
-    image: "/project2.jpg",
+    image: "/SmartPathAI/smartpath-opening-page.png",
     github: "https://github.com/VinhPham25/Smart-Path-AI",
-    demo: "https://demo.com",
-    screenshots: ["/sentiment-dashboard-analytics-dark.jpg", "/social-media-monitoring-dark-interface.jpg"],
+    demo: "https://github.com/VinhPham25/Smart-Path-AI",
+    screenshots: ["/SmartPathAI/smartpath-opening-page.png",],
     category: "current",
     tags: ["AI"]
   },
@@ -63,17 +63,17 @@ const projects = [
       backend: ["Python", "NumPy", "EMG Signal Analysis"],
       frontend: ["Plotly Dash"]
     },
-    outcome: "Handling 1M+ scheduled tasks daily with 99.99% uptime",
-    image: "/project3.jpg",
+    outcome: "Creates a foundation for low-cost, intuitive prosthetic control by replacing manual programming with an AI system that learns and adapts to a user's unique physiological signals.",
+    image: "/Limbo/limbo-main-picture.png",
     github: "https://github.com",
-    demo: "https://demo.com",
-    screenshots: ["/task-scheduler-dashboard-dark-theme.jpg", "/kubernetes-monitoring-dark-interface.jpg"],
+    demo: "https://github.com",
+    screenshots: ["/Limbo/limbo-main-picture.png", "/Limbo/gesture-gif.mp4"],
     category: "current",
     tags: ["AI"]
   },
   {
     id: 4,
-    title: "Brain-Computer Interface System",
+    title: "Brain-Computer Interface System (In Development)",
     description: "A Brain-Computer Interface (BCI) system that translates SSVEP EEG signals into real-time mouse cursor commands using frequency-domain machine learning.",
     longDescription:
       "Developed in collaboration with the SynapseX research team at Georgia Tech, this BCI is an ambitious effort to redefine how individuals with severe motor impairments interact with the digital world. The project focuses on creating a seamless bridge between human neural activity and computer input, specifically enabling hands-free cursor control through brainwaves. I am spearheading the development of an ML-driven system that utilizes Steady-State Visually Evoked Potentials (SSVEP). By exposing the user to visual stimuli flashing at specific frequencies, the system triggers distinct neural signatures that my model then captures and interprets as directional commands.\n\n Technically, the project involves a complex signal-processing pipeline designed to filter the high \"noise\" environment of the human brain. I designed a feature extraction engine using Fast Fourier Transform (FFT) and Canonical Correlation Analysis (CCA) to isolate frequency-domain patterns from raw EEG data. These features are then fed into LDA and SVM classification models that I've optimized to predict user intent—translating specific frequencies into \"Up,\" \"Down,\" \"Left,\" or \"Right\" with high precision. To accelerate development and model training, I also built a synthetic EEG data generator that simulates realistic noise patterns, ensuring the system remains robust even before being deployed on live hardware.",
@@ -83,10 +83,10 @@ const projects = [
       frontend: []
     },
     outcome: "Provides a foundation for fully autonomous computer navigation for those with limited mobility, converting physiological signals into digital independence and closing the gap between human thought and machine action.",
-    image: "/project4.jpg",
-    github: "https://github.com",
-    demo: "https://demo.com",
-    screenshots: ["/style-transfer-mobile-app-dark.jpg", "/artistic-filter-gallery-dark-theme.jpg"],
+    image: "/SynapseX/synapse-filler.png",
+    github: "https://github.com/LukeBuckner/neural-cursor-control",
+    demo: "https://github.com/LukeBuckner/neural-cursor-control",
+    screenshots: ["/SynapseX/synapse-filler.png"],
     category: "current",
     tags: ["AI"]
   },
@@ -104,7 +104,7 @@ const projects = [
     outcome: "Transforms the intake process from a passive data collection task into a proactive clinical tool, reducing physician administrative load while providing high-fidelity, history-aware insights that improve diagnostic accuracy.",
     image: "/PreVizAI/main-ui.png", 
     github: "https://github.com/VinhPham25/PreVizAI",
-    demo: "https://demo.com",
+    demo: "https://github.com/VinhPham25/PreVizAI",
     screenshots: [
       "/PreVizAI/main-ui.png", 
       "/PreVizAI/doctor-dashboard.png", 

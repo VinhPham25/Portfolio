@@ -9,6 +9,15 @@ import { Building2, Calendar, ChevronRight } from "lucide-react"
 
 const experiences = [
   {
+    role: "Incoming Software Engineering Intern",
+    company: "Cox Automotives",
+    period: "May 2026 - August 2026",
+    description: [
+      "Incoming software engineering intern for summer 2026 specializing in AI and machine learning applications within automotive solutions.",
+    ],
+    tech: [],
+  },
+  {
     role: "Software Engineering Intern",
     company: "Dell Technologies",
     period: "February 2025 - May 2025",

@@ -44,10 +44,10 @@ export function HeroSection() {
             transition={{ delay: 0.3 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-balance"
           >
-            <span className="text-white">Building the Future</span>
+            <span className="text-white">Hello, I'm</span>
             <br />
             <span className="bg-gradient-to-r from-cyan-400 via-cyan-300 to-white bg-clip-text text-transparent">
-              with Code
+              Vinh Pham
             </span>
           </motion.h1>
 
@@ -58,8 +58,7 @@ export function HeroSection() {
             transition={{ delay: 0.4 }}
             className="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 text-balance"
           >
-            Hello, I'm Vinh Pham. I enjoy transforming complex problems into elegant solutions through innovative software engineering and machine
-            learning.
+            I enjoy transforming complex problems into elegant solutions through innovative software engineering and machine learning.
           </motion.p>
 
           {/* CTA Buttons */}

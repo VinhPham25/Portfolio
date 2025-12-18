@@ -34,6 +34,12 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
   // Split the long description by double newlines to get paragraphs
   const paragraphs = project.longDescription.split('\n\n')
 
+  // Helper function to check if a file is a video
+  const isVideo = (filename: string) => {
+    const videoExtensions = ['.mp4', '.webm', '.mov', '.avi', '.mkv']
+    return videoExtensions.some(ext => filename.toLowerCase().endsWith(ext))
+  }
+
   const nextImage = () => {
     setDirection(1)
     setCurrentImageIndex((prev) => (prev + 1) % project.screenshots.length)
@@ -174,21 +180,42 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                   {/* Image Container */}
                   <div className="relative w-full h-[400px] flex items-center justify-center">
                     <AnimatePresence initial={false} custom={direction}>
-                      <motion.img
-                        key={currentImageIndex}
-                        src={project.screenshots[currentImageIndex] || "/placeholder.svg"}
-                        alt={`${project.title} screenshot ${currentImageIndex + 1}`}
-                        className="absolute inset-0 w-full h-full object-contain p-4"
-                        custom={direction}
-                        variants={slideVariants}
-                        initial="enter"
-                        animate="center"
-                        exit="exit"
-                        transition={{
-                          x: { type: "spring", stiffness: 300, damping: 30 },
-                          opacity: { duration: 0.2 }
-                        }}
-                      />
+                      {isVideo(project.screenshots[currentImageIndex]) ? (
+                        <motion.video
+                          key={currentImageIndex}
+                          src={project.screenshots[currentImageIndex]}
+                          className="absolute inset-0 w-full h-full object-contain p-4"
+                          custom={direction}
+                          variants={slideVariants}
+                          initial="enter"
+                          animate="center"
+                          exit="exit"
+                          transition={{
+                            x: { type: "spring", stiffness: 300, damping: 30 },
+                            opacity: { duration: 0.2 }
+                          }}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                        />
+                      ) : (
+                        <motion.img
+                          key={currentImageIndex}
+                          src={project.screenshots[currentImageIndex] || "/placeholder.svg"}
+                          alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+                          className="absolute inset-0 w-full h-full object-contain p-4"
+                          custom={direction}
+                          variants={slideVariants}
+                          initial="enter"
+                          animate="center"
+                          exit="exit"
+                          transition={{
+                            x: { type: "spring", stiffness: 300, damping: 30 },
+                            opacity: { duration: 0.2 }
+                          }}
+                        />
+                      )}
                     </AnimatePresence>
 
                     {/* Navigation Buttons */}
