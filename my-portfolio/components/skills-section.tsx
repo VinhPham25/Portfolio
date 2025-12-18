@@ -10,30 +10,30 @@ const skillCategories = [
   {
     title: "Languages",
     skills: [
-      { name: "Python", proficiency: 90, logo: "/python-logo.png" },
-      { name: "Java", proficiency: 85, logo: "/javalogo.png" },
-      { name: "Javascript", proficiency: 70, logo: "/javascript-logo.png" },
-      { name: "C", proficiency: 50, logo: "/c-logo.png" },
-      { name: "MATLAB", proficiency: 50, logo: "/matlab-logo.png" }
+      { name: "Python", proficiency: 90, logo: "/Skills/python-logo.png" },
+      { name: "Java", proficiency: 85, logo: "/Skills/javalogo.png" },
+      { name: "Javascript", proficiency: 70, logo: "/Skills/javascript-logo.png" },
+      { name: "C", proficiency: 50, logo: "/Skills/c-logo.png" },
+      { name: "MATLAB", proficiency: 50, logo: "/Skills/matlab-logo.png" }
     ],
   },
   {
     title: "Frameworks & Libraries",
     skills: [
-      { name: "NumPy", proficiency: 85, logo: "/numpy-logo.jpg" },
-      { name: "Pandas", proficiency: 85, logo: "/pandas-logo.jpg" },
-      { name: "PyTorch", proficiency: 80, logo: "/pytorch-logo.png" },
-      { name: "Tensorflow", proficiency: 75, logo: "/tensorflow-logo.webp" },
-      { name: "OpenCV", proficiency: 85, logo: "/opencv-logo.png" },
+      { name: "NumPy", proficiency: 85, logo: "/Skills/numpy-logo.jpg" },
+      { name: "Pandas", proficiency: 85, logo: "/Skills/pandas-logo.jpg" },
+      { name: "PyTorch", proficiency: 80, logo: "/Skills/pytorch-logo.png" },
+      { name: "Tensorflow", proficiency: 75, logo: "/Skills/tensorflow-logo.webp" },
+      { name: "OpenCV", proficiency: 85, logo: "/Skills/opencv-logo.png" },
     ],
   },
   {
     title: "Tools & Platforms",
     skills: [
-      { name: "Git", proficiency: 90, logo: "/git-logo.png" },
-      { name: "VS Code", proficiency: 95, logo: "/vscode-logo.png" },
-      { name: "MongoDB", proficiency: 60, logo: "/mongodb-logo.svg" },
-      { name: "Linux", proficiency: 50, logo: "/linux-logo.png" }
+      { name: "Git", proficiency: 90, logo: "/Skills/git-logo.png" },
+      { name: "VS Code", proficiency: 95, logo: "/Skills/vscode-logo.png" },
+      { name: "MongoDB", proficiency: 60, logo: "/Skills/mongodb-logo.svg" },
+      { name: "Linux", proficiency: 50, logo: "/Skills/linux-logo.png" }
     ],
   },
 ]

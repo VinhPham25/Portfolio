@@ -1,7 +1,8 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { X, Github, ExternalLink } from "lucide-react"
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { X, Github, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react"
 import { GlassCard } from "@/components/glass-card"
 
 interface Project {
@@ -27,8 +28,38 @@ interface ProjectModalProps {
 }
 
 export function ProjectModal({ project, onClose }: ProjectModalProps) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [direction, setDirection] = useState(0)
+
   // Split the long description by double newlines to get paragraphs
   const paragraphs = project.longDescription.split('\n\n')
+
+  const nextImage = () => {
+    setDirection(1)
+    setCurrentImageIndex((prev) => (prev + 1) % project.screenshots.length)
+  }
+
+  const prevImage = () => {
+    setDirection(-1)
+    setCurrentImageIndex((prev) => (prev - 1 + project.screenshots.length) % project.screenshots.length)
+  }
+
+  const slideVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1
+    },
+    exit: (direction: number) => ({
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0
+    })
+  }
 
   return (
     <motion.div
@@ -52,7 +83,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-transparent to-transparent" />
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 p-2 bg-black/50 backdrop-blur-md rounded-full border border-white/10 hover:bg-white/10 transition-colors"
+              className="absolute top-4 right-4 p-2 bg-black/50 backdrop-blur-md rounded-full border border-white/10 hover:bg-white/10 transition-colors z-10"
             >
               <X className="w-5 h-5" />
             </button>
@@ -76,49 +107,55 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               <h3 className="text-sm text-gray-500 uppercase tracking-widest mb-4">Tech Stack</h3>
               
               {/* AI & Computer Vision */}
-              <div className="mb-4">
-                <h4 className="text-xs text-cyan-400 font-semibold mb-2">AI & Computer Vision</h4>
-                <div className="flex flex-wrap gap-2">
-                  {project.techStack.ai.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-4 py-2 text-sm font-mono bg-cyan-500/10 rounded-lg text-cyan-400 border border-cyan-500/20"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+              {project.techStack.ai.length > 0 && (
+                <div className="mb-4">
+                  <h4 className="text-xs text-cyan-400 font-semibold mb-2">AI & Computer Vision</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.techStack.ai.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-4 py-2 text-sm font-mono bg-cyan-500/10 rounded-lg text-cyan-400 border border-cyan-500/20"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Backend & Real-Time */}
-              <div className="mb-4">
-                <h4 className="text-xs text-cyan-400 font-semibold mb-2">Backend & Real-Time</h4>
-                <div className="flex flex-wrap gap-2">
-                  {project.techStack.backend.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-4 py-2 text-sm font-mono bg-cyan-500/10 rounded-lg text-cyan-400 border border-cyan-500/20"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+              {project.techStack.backend.length > 0 && (
+                <div className="mb-4">
+                  <h4 className="text-xs text-cyan-400 font-semibold mb-2">Backend & Real-Time</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.techStack.backend.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-4 py-2 text-sm font-mono bg-cyan-500/10 rounded-lg text-cyan-400 border border-cyan-500/20"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Frontend */}
-              <div>
-                <h4 className="text-xs text-cyan-400 font-semibold mb-2">Frontend</h4>
-                <div className="flex flex-wrap gap-2">
-                  {project.techStack.frontend.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-4 py-2 text-sm font-mono bg-cyan-500/10 rounded-lg text-cyan-400 border border-cyan-500/20"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+              {project.techStack.frontend.length > 0 && (
+                <div>
+                  <h4 className="text-xs text-cyan-400 font-semibold mb-2">Frontend</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.techStack.frontend.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-4 py-2 text-sm font-mono bg-cyan-500/10 rounded-lg text-cyan-400 border border-cyan-500/20"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
 
             {/* Outcome - cyan gradient */}
@@ -129,21 +166,57 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               </div>
             </div>
 
-            {/* Screenshots */}
-            <div className="mb-8">
-              <h3 className="text-sm text-gray-500 uppercase tracking-widest mb-3">Screenshots</h3>
-              <div className="grid grid-cols-2 gap-4">
-                {project.screenshots.map((screenshot, index) => (
-                  <div key={index} className="rounded-xl overflow-hidden border border-white/10">
-                    <img
-                      src={screenshot || "/placeholder.svg"}
-                      alt={`${project.title} screenshot ${index + 1}`}
-                      className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300"
-                    />
+            {/* Screenshots Gallery */}
+            {project.screenshots && project.screenshots.length > 0 && (
+              <div className="mb-8">
+                <h3 className="text-sm text-gray-500 uppercase tracking-widest mb-3">Screenshots</h3>
+                <div className="relative bg-black/30 rounded-xl overflow-hidden border border-white/10">
+                  {/* Image Container */}
+                  <div className="relative w-full h-[400px] flex items-center justify-center">
+                    <AnimatePresence initial={false} custom={direction}>
+                      <motion.img
+                        key={currentImageIndex}
+                        src={project.screenshots[currentImageIndex] || "/placeholder.svg"}
+                        alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+                        className="absolute inset-0 w-full h-full object-contain p-4"
+                        custom={direction}
+                        variants={slideVariants}
+                        initial="enter"
+                        animate="center"
+                        exit="exit"
+                        transition={{
+                          x: { type: "spring", stiffness: 300, damping: 30 },
+                          opacity: { duration: 0.2 }
+                        }}
+                      />
+                    </AnimatePresence>
+
+                    {/* Navigation Buttons */}
+                    <button
+                      onClick={prevImage}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/70 backdrop-blur-md rounded-full border border-cyan-500/30 hover:bg-cyan-500/20 hover:border-cyan-400/50 transition-all z-10 group"
+                      aria-label="Previous image"
+                    >
+                      <ChevronLeft className="w-6 h-6 text-cyan-400 group-hover:text-cyan-300" />
+                    </button>
+                    <button
+                      onClick={nextImage}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/70 backdrop-blur-md rounded-full border border-cyan-500/30 hover:bg-cyan-500/20 hover:border-cyan-400/50 transition-all z-10 group"
+                      aria-label="Next image"
+                    >
+                      <ChevronRight className="w-6 h-6 text-cyan-400 group-hover:text-cyan-300" />
+                    </button>
+
+                    {/* Image Counter */}
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-black/70 backdrop-blur-md rounded-full border border-cyan-500/30 z-10">
+                      <span className="text-cyan-400 text-sm font-mono font-semibold">
+                        {currentImageIndex + 1} / {project.screenshots.length}
+                      </span>
+                    </div>
                   </div>
-                ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Links - cyan theme */}
             <div className="flex gap-4">
