@@ -46,9 +46,7 @@ function EnergyBeam() {
         <bufferGeometry>
           <bufferAttribute
             attach="attributes-position"
-            count={particles.count}
-            array={particles.positions}
-            itemSize={3}
+            args={[particles.positions, 3]}
           />
         </bufferGeometry>
         <pointsMaterial size={0.035} color="#a5f3fc" transparent opacity={0.7} blending={THREE.AdditiveBlending} />
