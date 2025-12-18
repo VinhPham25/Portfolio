@@ -8,7 +8,7 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Portfolio | CS Student & AI/ML Enthusiast",
+  title: "Vinh Pham",
   description:
     "Personal portfolio showcasing software engineering and machine learning projects. Building the future with code and AI.",
   generator: "v0.app",
