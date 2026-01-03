@@ -59,7 +59,7 @@ const projects = [
     longDescription:
       "Traditional prosthetics often rely on rigid, pre-programmed commands that feel unnatural to the user. To solve this, I helped develop an autonomous prosthetic system that utilizes unsupervised learning to bridge the gap between human intent and robotic execution. Under Team Limbo of Georgia Tech's Medical Robotics organization, I architected an end-to-end autoencoder pipeline designed to ingest raw 2-channel EMG signals and map them into high-dimensional 6D gesture vectors. This approach allows the system to recognize the subtle nuances of muscle contractions and translate them into five distinct finger curls and a variable thumb angle, creating a more fluid and intuitive range of motion.\n\n To overcome the challenge of data labeling in bionics, I built a custom \"ground truth\" generation system. By leveraging OpenCV and MediaPipe, I captured real-time hand movements through a camera and synchronized them with the user's EMG signals to train the model. To ensure the accuracy of these translations, I developed an interactive 3D visualization interface using Plotly Dash. This dashboard allows for real-time validation of EMG-to-gesture predictions, providing a visual feedback loop that ensures the machine learning model is accurately interpreting the user's intended gestures before they are sent to the hardware.",
     techStack: {
-      ai: ["Tensorflow", "Unsupervised Learning", "OpenCV", "MediaPiepe"],
+      ai: ["Tensorflow", "Unsupervised Learning", "OpenCV", "MediaPipe"],
       backend: ["Python", "NumPy", "EMG Signal Analysis"],
       frontend: ["Plotly Dash"]
     },
