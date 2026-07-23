@@ -12,28 +12,42 @@ const skillCategories = [
     skills: [
       { name: "Python", proficiency: 90, logo: "/Skills/python-logo.png" },
       { name: "Java", proficiency: 85, logo: "/Skills/javalogo.png" },
-      { name: "Javascript", proficiency: 70, logo: "/Skills/javascript-logo.png" },
-      { name: "C", proficiency: 50, logo: "/Skills/c-logo.png" },
-      { name: "MATLAB", proficiency: 50, logo: "/Skills/matlab-logo.png" }
+      { name: "C", proficiency: 80, logo: "/Skills/c-logo.png" },
+      { name: "JavaScript", proficiency: 70, logo: "/Skills/javascript-logo.png" },
+      { name: "SQL", proficiency: 65, logo: "/Skills/sql-logo.svg" },
+      { name: "C#", proficiency: 60, logo: "/Skills/csharp-logo.svg" },
+      { name: "Assembly", proficiency: 60, logo: "/Skills/assembly-logo.svg" },
+      { name: "MATLAB", proficiency: 50, logo: "/Skills/matlab-logo.png" },
     ],
   },
   {
     title: "Frameworks & Libraries",
     skills: [
+      { name: "OpenCV", proficiency: 85, logo: "/Skills/opencv-logo.png" },
       { name: "NumPy", proficiency: 85, logo: "/Skills/numpy-logo.jpg" },
       { name: "Pandas", proficiency: 85, logo: "/Skills/pandas-logo.jpg" },
       { name: "PyTorch", proficiency: 80, logo: "/Skills/pytorch-logo.png" },
-      { name: "Tensorflow", proficiency: 75, logo: "/Skills/tensorflow-logo.webp" },
-      { name: "OpenCV", proficiency: 85, logo: "/Skills/opencv-logo.png" },
+      { name: "Matplotlib", proficiency: 80, logo: "/Skills/matplotlib-logo.svg" },
+      { name: "Django", proficiency: 80, logo: "/Skills/django-logo.svg" },
+      { name: "TensorFlow", proficiency: 75, logo: "/Skills/tensorflow-logo.webp" },
+      { name: "SciPy", proficiency: 75, logo: "/Skills/scipy-logo.svg" },
+      { name: "scikit-learn", proficiency: 70, logo: "/Skills/scikitlearn-logo.svg" },
+      { name: "React", proficiency: 70, logo: "/Skills/react-logo.svg" },
+      { name: "Next.js", proficiency: 70, logo: "/Skills/nextjs-logo.png" },
     ],
   },
   {
     title: "Tools & Platforms",
     skills: [
+      { name: "AWS (Bedrock/AgentCore)", proficiency: 90, logo: "/Skills/aws-logo.png" },
+      { name: "Terraform", proficiency: 90, logo: "/Skills/terraform-logo.svg" },
       { name: "Git", proficiency: 90, logo: "/Skills/git-logo.png" },
-      { name: "VS Code", proficiency: 95, logo: "/Skills/vscode-logo.png" },
+      { name: "Docker", proficiency: 80, logo: "/Skills/docker-logo.svg" },
+      { name: "Google Cloud Platform", proficiency: 80, logo: "/Skills/googlecloud-logo.svg" },
+      { name: "REST APIs", proficiency: 75, logo: "/Skills/restapis-logo.svg" },
+      { name: "PostgreSQL", proficiency: 60, logo: "/Skills/postgresql-logo.svg" },
       { name: "MongoDB", proficiency: 60, logo: "/Skills/mongodb-logo.svg" },
-      { name: "Linux", proficiency: 50, logo: "/Skills/linux-logo.png" }
+      { name: "Redis", proficiency: 60, logo: "/Skills/redis-logo.svg" },
     ],
   },
 ]
@@ -46,14 +60,21 @@ function SkillBar({ skill, delay }: { skill: { name: string; proficiency: number
     <motion.div ref={ref} className="space-y-2" whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-6 h-6 rounded bg-white/5 p-0.5 flex items-center justify-center">
-            <Image
-              src={skill.logo || "/placeholder.svg"}
-              alt={`${skill.name} logo`}
-              width={20}
-              height={20}
-              className="object-contain"
-            />
+          <div className="w-6 h-6 rounded bg-white/5 p-0.5 flex items-center justify-center shrink-0">
+            {skill.logo ? (
+              <Image
+                src={skill.logo}
+                alt={`${skill.name} logo`}
+                width={20}
+                height={20}
+                className="object-contain"
+                unoptimized={skill.logo.endsWith(".svg")}
+              />
+            ) : (
+              <span className="text-[10px] font-mono text-cyan-400/70">
+                {skill.name.charAt(0)}
+              </span>
+            )}
           </div>
           <span className="font-mono text-sm text-white">{skill.name}</span>
         </div>

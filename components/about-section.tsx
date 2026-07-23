@@ -91,7 +91,7 @@ export function AboutSection() {
                 { icon: MapPin, label: "Location", value: "Austin, TX & Atlanta, GA" },
                 { icon: Calendar, label: "Experience", value: "2+ Years" },
                 { icon: Clock, label: "Concentration", value: "AI/ML & Computer Vision" },
-                { icon: Code, label: "Hobbies", value: "Chess & Football" },
+                { icon: Code, label: "Hobbies", value: "Chess, Poker, Fitness" },
               ].map((item, index) => (
                 <motion.div
                   key={index}

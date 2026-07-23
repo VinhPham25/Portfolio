@@ -14,16 +14,18 @@ const education = {
   degree: "B.S. Computer Science",
   graduation: "Expected May 2028",
   gpa: "4.0/4.0",
-  honors: ["Honors Program", "National Merit Scholar", "Dean's List"],
+  honors: ["Honors Program", "Dean's List", "National Merit Scholar"],
   relevantCourses: [
-    "Data Structures and Algorithms",
-    "Design and Analysis of Algorithms",
-    "Perception and Robotics",
-    "Computer Organization and Programming",
-    "Linear Algebra",
+    "Machine Learning",
+    "Artificial Intelligence",
+    "Algorithms Honors",
+    "Perception & Robotics",
+    "Systems & Networks",
+    "Computer Organization & Programming",
+    "Data Structures & Algorithms",
     "Discrete Math",
-    "Object Oriented Programming",
-    "Objects and Design"
+    "Linear Algebra",
+    "Multivariable Calculus",
   ],
 }
 

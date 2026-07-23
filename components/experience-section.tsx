@@ -9,56 +9,66 @@ import { Building2, Calendar, ChevronRight } from "lucide-react"
 
 const experiences = [
   {
-    role: "Incoming Software Engineering Intern",
-    company: "Cox Automotives",
-    period: "May 2026 - August 2026",
+    role: "Software Engineer Intern",
+    company: "Cox Automotive",
+    period: "May 2026 - Present",
     description: [
-      "Incoming software engineering intern for summer 2026 specializing in AI and machine learning applications within automotive solutions.",
+      "Building a RAG-powered Slack agent with AWS AgentCore that answers engineer and support ticket queries from an auto-synced, multi-sourced knowledge base–achieving 97% answer accuracy and deflecting ~40% of 8 hrs/wk/engineer support overhead",
+      "Led end-to-end modernization of the Overwatch platform's architecture and CI/CD, designing a parallelized two-pass search-tree retrieval pipeline with Redis caching, reducing latency of database query and bulk edit of 122,000+ client subscriptions by 85%+",
     ],
-    tech: [],
+    tech: ["Python", "C#", "Terraform", "AWS", "SQL", "Docker", "Redis"],
   },
   {
-    role: "Software Engineering Intern",
+    role: "Undergraduate Researcher",
+    company: "Mind, Brain, Education (MBE) Lab - Georgia Institute of Technology",
+    period: "January 2026 - Present",
+    description: [
+      "Engineering and optimizing an fNIRS preprocessing pipeline for the ASTaUND dataset that utilizes attention-based LSTM autoencoders to identify neural biomarkers of motor skill acquisition and improve surgical expertise classification accuracy",
+      "Developing a novel multivariate delay symbolic transfer entropy (TE) framework to quantify non-linear information flow and establish a robust connectivity model used to design data-driven GT BME curricula and adaptive surgical training protocols",
+    ],
+    tech: ["Python", "PyTorch", "fNIRS", "LSTM", "Autoencoders", "Transfer Entropy"],
+  },
+  {
+    role: "Full Stack Software Engineer Intern",
+    company: "Cortado Group",
+    period: "January 2026 - May 2026",
+    description: [
+      "Architected a PostgreSQL-backed Django project to convert transcripts into GTM growth insights for PE portfolio firms",
+      "Developed a dual-path AI scoring engine and Slack-synced agents to automate bottleneck detection for C-suite-led deployment",
+    ],
+    tech: ["Python", "Django", "React", "PostgreSQL"],
+  },
+  {
+    role: "Undergraduate Researcher",
+    company: "Applied Research Laboratories (ARL) - University of Texas at Austin",
+    period: "June 2025 - August 2025",
+    description: [
+      "Designed an experimental study for evaluating dynamic variability in 180+ additively manufactured beams and automated laser Doppler vibrometer tuning via MATLAB to achieve 95%+ precision – a 30% improvement over previous research methods",
+      "Optimized regression algorithm runtime by 50%, accelerating statistical analysis to drive research conclusions and publication",
+    ],
+    tech: ["MATLAB", "Python", "SciPy", "Matplotlib", "CAD", "COMSOL Multiphysics"],
+  },
+  {
+    role: "Software Engineer Intern",
     company: "Dell Technologies",
     period: "February 2025 - May 2025",
     description: [
-      "Engineered an LLM-powered robot that converts speech into Mermaid diagrams, facilitating subject visualization and discussion",
-      "Developed LLM prompts to automate diagram generation and ensure consistent G-code syntax for precise, reliable motor control",
-      "Optimized dual-LLM processing with RAG, reducing runtime by 80% to enable real-time demonstrations for Dell executives",
+      "Developed an AI-powered robot that translates speech into Mermaid diagrams, facilitating concept visualization and discussion",
+      "Engineered dual-LLM prompts to automate diagram generation and consistent G-code syntax for precise, reliable motor control",
+      "Designed a multithreaded-RAG pipeline to optimize runtime by 80% and enable real-time deployment for Dell executives",
     ],
-    tech: ["Python", "RAG", "LLM APIs", "Prompt Engineering", "Git"],
+    tech: ["Python", "C", "OpenAI", "Whisper"],
   },
   {
-    role: "Research Assistant",
-    company: "Applied Research Laboratories - University of Texas at Austin",
-    period: "June 2025 - August 2025",
+    role: "Founder",
+    company: "Project 1600",
+    period: "May 2023 - January 2026",
     description: [
-      "Designed an experimental study to evaluate dynamic variability in 180+ additively manufactured beams under Dr. Christina Naify",
-      "Hypertuned laser Doppler vibrometer using MATLAB to achieve 95%+ testing precision, a 30% improvement over prior methods",
-      "Enhanced curve-fitting optimization runtime by 50%, accelerating statistical analysis to drive research conclusions and publication",
+      "Established a multi-district SAT mentorship program and curriculum, elevating the mean scores of 15+ students by 160+ points",
+      "Designed an automated website for enrollment management, curriculum planning, and tutor recruitment, generating 320+ visits",
     ],
-    tech: ["Python", "SciPy", "Matplotlib", "Pands", "MATLAB", "CAD", "COMSOL Multiphysics"],
+    tech: ["Web Development", "Curriculum Design", "Mentorship"],
   },
-  {
-    role: "AI Consultant",
-    company: "GameRun AI",
-    period: "December 2024 - February 2025",
-    description: [
-      "Directed UI/UX enhancements by researching 20+ AI video analysis companies to create customer-centric data visualizations",
-      "Refined LLM with AI agents to reduce hallucinations and improve automated coaching feedback for sports motion analysis",
-    ],
-    tech: ["AI Agents", "LLM", "UI/UX Design", "Competitor Analysis"],
-  },
-  {
-    role: "Product Development Team Lead",
-    company: "SportzMate",
-    period: "May 2024 - August 2024",
-    description: [
-      "Led a team of 6 interns on integrating AI capabilities into the company’s new “Player Performance Tracking” in-app product",
-      "Supervised Figma prototyping and redesign of 50+ screens, improving UI/UX for feature validation and initial consumer testing",
-    ],
-    tech: ["Figma", "UI/UX Design", "Product Development"]
-  }
 ]
 
 export function ExperienceSection() {
